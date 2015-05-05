@@ -209,6 +209,6 @@ def compareMortgages(amt, years, fixedRate, pts, ptsRate,
     plotMortgages(morts, amt)
 
 #Page 150
-compareMortgages(amt=200000, years=30, fixedRate=0.07,
+compareMortgages(amt=900000, years=20, fixedRate=0.0615,
                  pts = 3.25, ptsRate=0.05,
                  varRate1=0.045, varRate2=0.095, varMonths=48)
