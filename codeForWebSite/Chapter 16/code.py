@@ -63,3 +63,4 @@ def anyProb(numTrials):
           anyMonth48 += 1
     aProb = anyMonth48/float(numTrials)
     print 'Probability of at least 48 births in some month =', aProb
+#  pylab.show()
