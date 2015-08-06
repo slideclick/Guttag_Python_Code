@@ -9,7 +9,7 @@
 >>> 2
 1
 '''
-# from __future__ import print_function
+from __future__ import print_function
 import inspect
 import sys
 import pprint
@@ -60,12 +60,17 @@ def log(message):
 #@trace
 def _test(fname='null'):
     print('{0} calledBy {1}'.format(inspect.stack()[0][3],inspect.stack()[1][3])) 
-    pass    
-    
-if __name__ == "__main__":
     for ln in open('tGraph.py'):
         pat = re.compile(r'\S+nodes\[(\d)\],nodes\[(\d)\]\S')
         mat=pat.search(ln)
         if mat:
             print('{0} {1}'.format(mat.group(1),mat.group(2)))
-        pass
+        pass   
+    
+
+pat = re.compile(r'\S+nodes\[(\d)\],nodes\[(\d)\]\S')
+[print(pat.sub(r'\1 \2',ln) if pat.search(ln) else '' )for ln in sys.stdin if ',' in ln ] 
+   
+if __name__ == "__main__":
+    pass
+
