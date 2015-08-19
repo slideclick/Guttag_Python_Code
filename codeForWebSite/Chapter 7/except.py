@@ -8,7 +8,7 @@ def getRatios(vect1, vect2):
             ratios.append(vect1[index]/float(vect2[index]))
         except ZeroDivisionError:
             ratios.append(float('nan')) #nan = Not a Number
-        except:
+        except Exception as e:
             raise ValueError('getRatios called with bad arguments')
     return ratios
 
